@@ -1,13 +1,15 @@
 class ProductManager {
     constructor() {
         this.products = [
-            {name: `coca cola`,
+            {id: 1,
+            name: `coca cola`,
             description: `La mejor gaseosa cola del mercado`,
             price: 110,
             thumbnail: `foto`,
             code: `cjdgjdk`,
             stock: 10},
-            {name: `pepsi`,
+            {id: 2,
+            name: `pepsi`,
             description:`Igual que la coca pero peor`,
             price: 90,
             thumbnail: `foto`,
@@ -18,6 +20,7 @@ class ProductManager {
     };
 
     getProducts() {
+        console.log(this.products);
         return this.products;
     }
 
@@ -80,9 +83,9 @@ class ProductManager {
     
 };
 
-const productManager = new ProductManager()
+export default ProductManager
 
-export {getProducts , getProductsById};
+//const productManager = new ProductManager()
 // productManager.addProduct(`coca cola`, `La mejor gaseosa cola del mercado`, 110, `foto`, `cjdgjdk`, 10);
 // //console.log(productManager.getProducts())
 // // console.log(`================================================================`)

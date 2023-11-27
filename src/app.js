@@ -1,16 +1,23 @@
 import express from 'express';
-import { getProducts, getProductsById } from './prductManager.js';
+import ProductManager from './prductManager.js';
 
 
 const app = express();
 const port = 3000;
 
-//app.get('/products/:id', (req, res) => {
-//    if (!!req.params.id) { 
-//        return getProductsById(req.params.id)
-//    }else 
-//    return getProducts()
-//})
+
+app.get('/products/:id', (req, res) => {
+    const paramId = req.params.id;
+    
+    if (!!paramId) { 
+        console.log("1");
+        const productWithId = ProductManagerroductManager.getProductsById(paramId);
+        return res.send(productWithId);
+    }else {
+        console.log("2");
+        const products = ProductManager.getProducts();
+        return res.send(products);
+}})
 
 
 app.listen(port, () => {
